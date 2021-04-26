@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chess by Tahir</title>
+    <link rel="stylesheet" href="chesStyles.css"/>
+</head>
+<body>
+    <!--Form for accepting names of players-->
+    <div id="formDiv">
+      <h1 style="margin-top: 5px;"><u>CHESS</u></h1>
+      <form action="chess.html" onsubmit="submitForm(event);">
+        <div class="nameInput">
+          <img src="Images/wk.png" style="margin-right: 20px;"></img>
+          <div>
+            <label for="p1name">White King's name:</label><hr/>
+            <input type="text" id="p1name" name="p1name" maxlength="26" value="King White of the Lobby" required><br/>
+          </div>
+        </div>
+        <div class="nameInput">
+          <img src="Images/bk.png" style="margin-right: 20px;"></img>
+          <div>
+            <label for="p2name">Black King's name:</label><hr/>
+            <input type="text" id="p2name" name="p2name" maxlength="26" value="King Black of the Console" required><br/>
+          </div>
+        </div>
+        <input type="submit" value="Begin">
+      </form>
+
+    </div>
+    <div id="gameDiv" class="initGameCls">
+        <hr/>
+        <h2>RULES AND INSTRUCTIONS</h2>
+        <p><b style="color:red;"><u>If the game doesn't load properly:</u></b>&nbsppress an arrow button from the <b>CONTROL BOX</b> given below</p>
+        <p>Use the control buttons provided below the Chess board or arrow keys to move the cursor</p>
+        <p>Click on the Enter button or Enter key form your keyboard to select a chess piece and move the cursor to desired location</p>
+        <p>Again press the Enter button or Enter key from your keyboard to place the selected piece</p>
+        <p>The is no restriction in choosing a peice and its location</p>
+        <p>If there is a peice already at the location where you put the new selected piece,</p>
+        <p>then the old piece will move to <b>Trash</b> </p>
+        <hr/>
+    
+        <!--For Giving IDs to images to identify them in JavaScript-->
+        <img class="gameImg" id="head" src="Images/chess.jpg"></img>
+        <img class="gameImg" id="bsq" src="Images/bsq.png"></img>
+        <img class="gameImg" id="rsq" src="Images/rsq.png"></img>
+        <img class="gameImg" id="trs" src="Images/trash.png"></img>
+        <img class="gameImg" id="bo" src="Images/bo.jpg"></img>
+        <img class="gameImg" id="br" src="Images/br.png"></img>
+        <img class="gameImg" id="bb" src="Images/bb.png"></img>
+        <img class="gameImg" id="bk" src="Images/bk.png"></img>
+        <img class="gameImg" id="bkn" src="Images/bkn.png"></img>
+        <img class="gameImg" id="bp" src="Images/bp.png"></img>
+        <img class="gameImg" id="bq" src="Images/bq.png"></img>
+        <img class="gameImg" id="wb" src="Images/wb.png"></img>
+        <img class="gameImg" id="wk" src="Images/wk.png"></img>
+        <img class="gameImg" id="wkn" src="Images/wkn.png"></img>
+        <img class="gameImg" id="wp" src="Images/wp.png"></img>
+        <img class="gameImg" id="wq" src="Images/wq.png"></img>
+        <img class="gameImg" id="wr" src="Images/wr.png"></img>
+        
+        <!--Defining the canvases-->
+        <img style="margin-left: 180px;" src="Images/chess.jpg"></img>
+        <canvas height="410" id="myCanvas" style="border: 10px solid #d3d3d3;" width="700"></canvas>        
+        <hr />
+    
+        <!--Defining the control buttons and their maps-->
+        <div style="text-align: center;">
+          <h2 style="margin-bottom: 0px;">CONTROL BOX</h2>
+          <br/>
+          <h1 id="pname" style=" float:left; font-size: 30px"></h1> 
+          <img src="Images/moveBtn.png" usemap="#btnmap" width= "100px"/>
+          <map name="btnmap">
+            <area coords="33,0,66,33" onclick="up()" shape="rect"></area>
+            <area coords="0,33,33,66" onclick="left()" shape="rect"></area>
+            <area coords="66,33,100,66" onclick="right()" shape="rect"></area>
+            <area coords="33,66,66,100" onclick="down()" shape="rect"></area>
+          </map>
+          
+          <img height="100" onclick="enter()" src="Images/Enterkey.png" usemap="#entermap" width= "100px"; style="margin-left: 20px;"/>
+          <map name="entermap">
+            <area coords="0,0,100,100" onclick="enter()" shape="rect"></area>
+          </map>
+        </div>
+        <hr/>
+    
+        <!--Just for the credit HUE HUE HUE -->
+        <img id="tr" src="Images/tahir.jpg" width="300" height= "120px"/>
+      </div>
+      <script src="chesScript.js"></script>
+    </body>
+</html>
