@@ -1,9 +1,9 @@
 # Chess
 Its a chess game. I first made this using C++ graphics, so this version is just its Javascript translation.
-The concepts used in this repository are:
--Canvas and its drawing methods.
--Maps.
--JavaScript functions.
+The concepts used in this repository are:  
+-Canvas and its drawing methods.  
+-Maps.  
+-JavaScript functions.  
 
 I have used canvas which is similar to C++ graph.
 Then I drew the board image, and the chess piece image on the canvas.
